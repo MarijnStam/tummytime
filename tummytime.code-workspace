@@ -4,4 +4,7 @@
 			"path": "."
 		}
 	],
+	"settings": {
+		"python.defaultInterpreterPath": "${workspaceFolder}/tummytime_venv/bin/python3"
+	}
 }
