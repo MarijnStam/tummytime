@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('beep/', include("aggregator.urls")),
+    path('beep/', include("tummy_collector.urls")),
     path('admin/', admin.site.urls),
 ]
