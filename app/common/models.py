@@ -4,14 +4,15 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # --------------- Feel Model ------------------ #
 # --------------------------------------------- #       
 class Feel(models.Model):
-    feel = models.IntegerField(
+    timestamp = models.DateTimeField()
+    feel_nr = models.IntegerField(
         default=0,
         validators=[MaxValueValidator(10), MinValueValidator(0)]
     )
-    timestamp = models.DateTimeField()
+    symptoms = models.IntegerField(default=0)
     
     def __str__(self):
-        return f"{self.timestamp} - {self.feel}"
+        return f"{self.timestamp} - Feel: {self.feel_nr}. Symptoms: {self.symptoms}"
     
 # ------------ Ingredient Model --------------- #
 # --------------------------------------------- #    
