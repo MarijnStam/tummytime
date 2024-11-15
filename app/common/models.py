@@ -35,9 +35,9 @@ class Meal(models.Model):
 # --------------------------------------------- #   
 class MealEntry(models.Model):
     timestamp = models.DateTimeField()
-    meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
     ingredients = models.ManyToManyField(Ingredient, blank=True)
     
     def __str__(self):
-        return f"{self.timestamp} - {self.meal.name}"
+        return f"{self.timestamp} - {self.name}"
     

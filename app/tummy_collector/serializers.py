@@ -19,5 +19,5 @@ class MealSerializer(serializers.ModelSerializer):
 class MealEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = MealEntry
-        fields = ['timestamp', 'meal', 'ingredients']
+        fields = ['timestamp', 'name', 'ingredients']
 
