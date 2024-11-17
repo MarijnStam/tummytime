@@ -25,11 +25,11 @@ class Ingredient(models.Model):
 # ---------------- Meal Model ----------------- #
 # --------------------------------------------- #
 class Meal(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    meal_name = models.CharField(max_length=100, unique=True)
     ingredients = models.ManyToManyField(Ingredient)
     
     def __str__(self):
-        return self.name
+        return self.meal_name
     
 # ------------- MealEntry Model --------------- #
 # --------------------------------------------- #   

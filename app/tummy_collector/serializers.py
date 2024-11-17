@@ -9,13 +9,15 @@ class FeelSerializer(serializers.ModelSerializer):
 class IngredientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ingredient
-        fields = ['name']
+        fields = ['id', 'name']
 
 class MealSerializer(serializers.ModelSerializer):
+    
+    ingredients = serializers.PrimaryKeyRelatedField(many=True, queryset=Ingredient.objects.all())
     class Meta:
         model = Meal
-        fields = ['name', 'ingredients']
-
+        fields = ['meal_name', 'ingredients']
+        
 class MealEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = MealEntry
